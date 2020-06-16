@@ -1,0 +1,433 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: normal 16px sans-serif;
+    color: #555;
+}
+
+nav {
+    list-style: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    opacity: 0.75;
+    color: #ffffff;
+}
+
+a.btn {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    background-color: #273cb3;
+    color: aliceblue;
+    opacity: .65;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 80px;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+.grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+hr {
+    width: 250px;
+    height: 3px;
+    background-color: #3f51b5;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+section h3.title {
+    text-transform: capitalize;
+    font: bold 32px "Open Sans", sans-serif;
+    text-align: center;
+}
+
+section p {
+    max-width: 775px;
+    line-height: 2;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    section {
+        padding: 50px 20px;
+    }
+}
+
+/* HEADER'S STYLE */
+
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 100px 0;
+    animation: 1.5s fadeintext 0.5s forwards;
+    color: #ffffff;
+}
+
+@keyframes fadeintext {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+header h2 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+header nav {
+    display: flex;
+    margin-right: -15px;   /* PROBLEM */
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+
+    header h2 {
+        margin-bottom: 15px;
+    }
+}
+
+/* Hero style */
+
+.hero {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.hero .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    background-color: #80a3db;
+    opacity: 0.80;
+}
+
+.hero h1 {
+    font: normal 65px "Prompt", sans-serif;
+    color: #1b2952;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    animation: 2s spacingtext 0.5s ease-in-out forwards;
+}
+
+@keyframes spacingtext {
+    0% {
+        letter-spacing: 8px;
+    }
+    100% {
+        letter-spacing: 18px;
+    }
+}
+
+.hero h3 {
+    font: normal 28px "open sans", sans-serif;
+    margin-bottom: 40px;
+    color: #233364;
+}
+
+.hero a.btn {
+    padding: 20px 46px;
+}
+
+.hero-content-area {
+    opacity: 0;
+    animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        margin: 0
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h3 {
+        font-size: 24px;
+    }
+
+    .hero a.btn {
+        padding: 15px 40px;
+    }
+}
+
+/* GALLERY SECTION */
+
+.destination .grid li {
+    height: 350px;
+    padding: 20px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.destination .grid li.small {
+    flex-basis: 30%;
+}
+
+.destination .grid li.large {
+    flex-basis: 70%;
+}
+
+@media (max-width: 1100px) {
+    .destination .grid li.small,
+    .destination .grid li.large {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .destination .grid li.small,
+    .destination .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+
+/* THANK YOU PAGE */
+.fa-certificate {
+    color: #d4b13e;
+    display: none;
+    z-index: 2;
+    animation: icon-slide 1s linear .2s infinite;
+}
+
+.gold-line {
+    background-color: #d4b13e;
+    width: 200px;
+    height: 3px;
+    border: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: none;
+    z-index: 2;
+}
+
+
+.author-name {
+    color: rgb(226, 225, 225);
+    font-size: 23px;
+    display: none;
+    z-index: 2;
+}
+
+.child {
+    height: 400px;
+    margin: 30px;
+    flex-basis: 45%;
+    background-clip: content-box;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+
+.bg-1 {
+    background-image: url(https://excursionvietnam.com/uploads/Sapa_sunset.jpg);
+}
+
+.bg-2 {
+    background-image: url(https://vietnamtour.in/uploads/VIetnam_mountains_7.jpg);
+}
+
+.bg-3 {
+    background-image: url(https://www.nationalgeographic.com/content/dam/travel/2019-digital/vietnam-justin-mott/as-above-so-below_print-resolution_015.adapt.1900.1.jpg);
+}
+
+.bg-4 {
+    background-image: url(https://d13jio720g7qcs.cloudfront.net/images/guides/origin/570c6e829c6a3.jpg);
+}
+
+
+.shoutout ul:hover .child:before, .shoutout ul:focus .child:before {
+    display: block;
+} 
+
+.shoutout ul:hover .child, .shoutout ul:focus .child {
+    transform: scale(1.1);
+}
+
+.shoutout ul:hover .gold-line, .shoutout ul:focus .gold-line {
+    display: block;
+} 
+
+.shoutout ul:hover .fa, .shoutout ul:focus .fa {
+    display: block;
+}
+
+.shoutout ul:hover .author-name, .shoutout ul:focus .author-name {
+    display: block;
+} 
+
+.child:before {
+    display: none;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: -1;
+    background-color: rgba(42, 46, 49, 0.58);
+}
+
+@keyframes icon-slide {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .child {
+        flex-basis: 100%;
+    }
+    .child::before {
+        background-clip: content-box;
+    }
+}
+
+@media (max-width: 1100px) {
+    .child {
+        flex-basis: 100%;
+    }
+}
+/* CONTACT FORM */ 
+.contact form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    min-height: 200px;
+}
+
+input {
+    padding: 20px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: normal 16px "open sans", sans-serif;
+}
+
+textarea {
+    max-width: 100%;
+    min-height: 200px;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    resize: vertical;
+    font: normal 16px "open sans", sans-serif;
+}
+
+.form-btn {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: start;
+    background-color: #273cb3;
+    color: aliceblue;
+    opacity: 1;
+    align-self: baseline;
+    padding: 13px 18px;
+    margin-top: 10px;
+}
+
+@media (max-width: 1100px) {
+    .contact form {
+        width: 80%;
+        min-height: 150px;
+    }   
+}
+/* FOOTER STYLE */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #273cb3;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer ul {
+    display: flex;
+}
+
+footer ul li {
+    margin-left: 20px;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.6;
+    align-self: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.fa-facebook {
+    color: rgb(255, 255, 255);
+}
+
